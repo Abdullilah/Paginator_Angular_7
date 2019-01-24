@@ -1,0 +1,16 @@
+.planets {
+  &__title {
+    &--error {
+      color: #c55656;
+      margin: 50px;
+    }
+  }
+
+  &__not-found {
+    a {
+      text-decoration: none;
+      text-align: center;
+      display: block;
+    }
+  }
+}

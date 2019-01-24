@@ -1,0 +1,20 @@
+/* Sizes of Screens */
+$screen--xs: 400px;
+$screen--sm: 600px;
+$screen--md: 768px;
+$screen--lg: 992px;
+$screen--xl: 1200px;
+$screen--xxl: 1366px;
+
+/* Colors */
+$background-color: #333333;
+$main-color: #8ec044;
+$white-color: #ffffff;
+$black-color: #000000;
+$error-color: #c55656;
+
+@mixin hoverOver() {
+  background-color: $main-color;
+  color: $white-color;
+  font-weight: bold;
+}

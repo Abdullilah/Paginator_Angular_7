@@ -1,0 +1,28 @@
+<div class="planets__list">
+  <h1 class="planets__title planets__title--section">Lists of Planets</h1>
+  <mat-form-field>
+    <input matInput placeholder="Filter Planet with name" (keyup)="filterPlanets($event)" #filter>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Number of Filter's characters to start filtering"
+                (selectionChange)="changeChartLength($event)" [value]='chartsLength'>
+      <mat-option *ngFor="let ChartsNum of [1, 2, 3, 4, 5]" [value]="ChartsNum">
+        {{ChartsNum}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <a *ngFor="let planet of selectedPlanets" class="planets__list__item" (click)="planetClicked(planet.name)">
+    <mat-card>{{planet.name}}, {{planet.population | population }}</mat-card>
+  </a>
+  <h3 *ngIf="selectedPlanets && !selectedPlanets.length" class="planets__list__empty">There is no Planets</h3>
+</div>
+<div class="planets__paginator" *ngIf="this.allPlanets">
+  <mat-paginator [length]="this.allPlanets.length"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 (page)="getNext($event)">
+  </mat-paginator>
+</div>
+<div class="planets__spinner" *ngIf="!selectedPlanets">
+  <mat-spinner></mat-spinner>
+</div>

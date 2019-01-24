@@ -1,0 +1,76 @@
+<div class="planets__list">
+  <h1 class="planets__title planets__title--section">Planet Details</h1>
+  <div class="planets__details">
+    <button [routerLink]="['/planets']" class="planets__home-btn">Home Page</button>
+    <mat-card *ngIf="planet">
+      <h2>{{planet.name}}</h2>
+      <div class="planets__details__container">
+        <div class="planets__details__column">
+          <div class="planets__details__item">
+            <p>Rotation Period</p>
+            <p>{{planet.rotation_period | number}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Orbital Period</p>
+            <p>{{planet.orbital_period | number}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Diameter</p>
+            <p>{{planet.diameter | number}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Climate</p>
+            <p>{{planet.climate}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Gravity</p>
+            <p>{{planet.gravity}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Created</p>
+            <p>{{planet.created | date}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Edited</p>
+            <p>{{planet.edited | date}}</p>
+          </div>
+        </div>
+        <div class="planets__details__column">
+          <div class="planets__details__item">
+            <p>Terrain</p>
+            <p>{{planet.terrain}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Surface Water</p>
+            <p>{{planet.surface_water | number}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>Population</p>
+            <p>{{planet.population | population}}</p>
+          </div>
+          <div class="planets__details__item">
+            <p>residents</p>
+            <div *ngIf="planet.residents.length > 0; else residentsEmpty">
+              <a *ngFor="let resident of planet.residents" href="{{resident}}" target="_blank">{{resident | link}}</a>
+            </div>
+            <ng-template #residentsEmpty><p>Empty</p></ng-template>
+          </div>
+          <div class="planets__details__item">
+            <p>Films</p>
+            <div *ngIf="planet.films.length > 0; else filmsEmpty">
+              <a *ngFor="let film of planet.films" href="{{film}}" target="_blank">{{film | link}}</a>
+            </div>
+            <ng-template #filmsEmpty><p>Empty</p></ng-template>
+          </div>
+          <div class="planets__details__item">
+            <p>URL</p>
+            <a href="{{planet.url}}" target="_blank">{{planet.url | link}}</a>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div class="planets__spinner" *ngIf="!planet">
+  <mat-spinner></mat-spinner>
+</div>

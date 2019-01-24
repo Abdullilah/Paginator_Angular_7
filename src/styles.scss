@@ -1,0 +1,116 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "app/app.component";
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$md-planetprimary: (
+  50: darken($main-color, 0%),
+  100: darken($main-color, 2%),
+  200: darken($main-color, 4%),
+  300: darken($main-color, 6%),
+  400: darken($main-color, 8%),
+  500: darken($main-color, 10%),
+  600: darken($main-color, 12%),
+  700: darken($main-color, 14%),
+  800: darken($main-color, 16%),
+  900: darken($main-color, 18%),
+  A100: darken($main-color, 20%),
+  A200: darken($main-color, 22%),
+  A400: darken($main-color, 24%),
+  A700: darken($main-color, 26%),
+  contrast:
+  (
+    50: $black-color,
+    100: $black-color,
+    200: $black-color,
+    300: $white-color,
+    400: $white-color,
+    500: $white-color,
+    600: $white-color,
+    700: $white-color,
+    800: $white-color,
+    900: $white-color,
+    A100: $black-color,
+    A200: $white-color,
+    A400: $white-color,
+    A700: $white-color
+  )
+);
+$md-planeterror: (
+  50: #f5e3e3,
+  100: #e7baba,
+  200: #d78c8c,
+  300: #c65e5e,
+  400: #ba3c3c,
+  500: #ae1919,
+  600: #a71616,
+  700: #9d1212,
+  800: #940e0e,
+  900: #840808,
+  A100: #ffb3b3,
+  A200: #ff8080,
+  A400: #ff4d4d,
+  A700: #ff3333,
+  contrast:
+  (
+    50: $black-color,
+    100: $black-color,
+    200: $black-color,
+    300: $white-color,
+    400: $white-color,
+    500: $white-color,
+    600: $white-color,
+    700: $white-color,
+    800: $white-color,
+    900: $white-color,
+    A100: $black-color,
+    A200: $black-color,
+    A400: $black-color,
+    A700: $white-color
+  )
+);
+$md-planetaccent: (
+  50: #f3e0e5,
+  100: #e2b3bf,
+  200: #cf8094,
+  300: #bb4d69,
+  400: #ad2648,
+  500: #9e0028,
+  600: #960024,
+  700: #8c001e,
+  800: #820018,
+  900: #70000f,
+  A100: #ff9fa5,
+  A200: #ff6c75,
+  A400: #ff3945,
+  A700: #ff1f2d,
+  contrast:
+  (
+    50: $black-color,
+    100: $black-color,
+    200: $black-color,
+    300: $white-color,
+    400: $white-color,
+    500: $white-color,
+    600: $white-color,
+    700: $white-color,
+    800: $white-color,
+    900: $white-color,
+    A100: $black-color,
+    A200: $black-color,
+    A400: $white-color,
+    A700: $white-color
+  )
+);
+$planet-app-primary: mat-palette($md-planetprimary);
+$planet-app-accent: mat-palette($md-planetaccent);
+$planet-app-warn: mat-palette($md-planeterror);
+// Create the theme object (a Sass map containing all of the palettes).
+$planet-app-theme: mat-light-theme(
+    $planet-app-primary,
+    $planet-app-accent,
+    $planet-app-warn
+);
+
+@include angular-material-theme($planet-app-theme);
