@@ -7,3 +7,4 @@
 ##### RxJs
 ##### ngRx: to save some data about the user's actions
 ##### SWAPI: to get json mock data
+##### BEM: naming CSS
