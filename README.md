@@ -8,3 +8,5 @@
 ##### ngRx: to save some data about the user's actions
 ##### SWAPI: to get json mock data
 ##### BEM: naming CSS
+
+##### Demo: https://stackblitz.com/github/Abdullilah/Paginator_Angular_7
